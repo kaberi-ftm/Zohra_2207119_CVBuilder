@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cvbuilder.HomeScreenController">
+   <children>
+      <Label fx:id="text" layoutX="149.0" layoutY="83.0" lineSpacing="3.0" prefHeight="46.0" prefWidth="301.0" text="Your onestop solution to make your cv on your own" textFill="#f2f2f2">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <Label fx:id="welcome" layoutX="142.0" layoutY="39.0" text="Welcome to CVBuilder!!!" textFill="#f7cfcf">
+         <font>
+            <Font name="Arial" size="29.0" />
+         </font></Label>
+      <Button layoutX="224.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleCreateNewCV" text="Create New CV">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
