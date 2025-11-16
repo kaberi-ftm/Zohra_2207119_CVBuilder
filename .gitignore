@@ -1,0 +1,12 @@
+# Local reference docs (do not commit)
+/PROJECT_GUIDE.md
+/A2+B2 (Curriculum Vitae Builder).txt
+
+# OS/editor noise
+*.log
+.DS_Store
+Thumbs.db
+*.iml
+.idea/
+.vscode/
+target/
