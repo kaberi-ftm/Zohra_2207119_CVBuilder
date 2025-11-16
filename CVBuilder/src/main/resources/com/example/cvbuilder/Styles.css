@@ -1,7 +1,114 @@
 .root {
-    -fx-background-color: #232b2b;
+    -fx-background-color: #f7f8fa;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-text-fill: #222222;
 }
-.label{
-     -fx-alignment:center;
 
- }
+.heading-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #111111;
+}
+
+.section-heading {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d2d2d;
+}
+
+.cv-name {
+    -fx-font-size: 30px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #111111;
+}
+
+.cv-contact { -fx-text-fill: #555555; }
+
+Button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 6;
+}
+Button:hover { -fx-background-color: #1d4ed8; }
+
+Label { -fx-wrap-text: true; }
+
+.text-field, .text-area {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #222222;
+    -fx-prompt-text-fill: #6b7280;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #d1d5db;
+    -fx-border-width: 1;
+}
+.text-area .content { -fx-background-color: #ffffff; }
+
+/* Cards */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+/* Mobile container card */
+.mobile-card {
+    -fx-padding: 16;
+}
+
+/* Preview surface (white, print-friendly) */
+.preview-surface { -fx-background-color: #ffffff; }
+.preview-surface Label { -fx-text-fill: #222222; }
+.preview-surface .section-heading { -fx-text-fill: #111111; }
+
+/* Page container (A4-like) */
+.page {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0.2, 0, 2);
+}
+
+/* Sidebar accent backgrounds per theme */
+.theme-blue .accent-bg { -fx-background-color: #2563eb; }
+.theme-teal .accent-bg { -fx-background-color: #0d9488; }
+.theme-purple .accent-bg { -fx-background-color: #7c3aed; }
+.theme-crimson .accent-bg { -fx-background-color: #dc2626; }
+
+.sidebar { -fx-background-radius: 6; }
+.sidebar Label { -fx-text-fill: #f4f4f4; }
+.sidebar .section-heading { -fx-text-fill: #ffffff; }
+/* small accent chip */
+.chip { -fx-background-radius: 999; }
+.mock-block { -fx-background-insets: 0; }
+
+/* Accent the section headings and separators by theme in preview */
+.preview-surface.theme-blue .section-heading { -fx-text-fill: #2563eb; }
+.preview-surface.theme-teal .section-heading { -fx-text-fill: #0d9488; }
+.preview-surface.theme-purple .section-heading { -fx-text-fill: #7c3aed; }
+.preview-surface.theme-crimson .section-heading { -fx-text-fill: #dc2626; }
+
+.accent-separator { -fx-opacity: 0.8; }
+.preview-surface.theme-blue .accent-separator { -fx-background-color: #2563eb; }
+.preview-surface.theme-teal .accent-separator { -fx-background-color: #0d9488; }
+.preview-surface.theme-purple .accent-separator { -fx-background-color: #7c3aed; }
+.preview-surface.theme-crimson .accent-separator { -fx-background-color: #dc2626; }
+
+/* Scroll background transparent so root shows */
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: transparent; }
+
+/* ChoiceBox readability on light background */
+.choice-box { -fx-background-color: #ffffff; }
+.choice-box .label { -fx-text-fill: #111111; }
+
+/* Buttons in preview pick up accent by theme */
+.preview-surface.theme-blue Button { -fx-background-color: #2563eb; }
+.preview-surface.theme-blue Button:hover { -fx-background-color: #1d4ed8; }
+.preview-surface.theme-teal Button { -fx-background-color: #0d9488; }
+.preview-surface.theme-teal Button:hover { -fx-background-color: #0b8077; }
+.preview-surface.theme-purple Button { -fx-background-color: #7c3aed; }
+.preview-surface.theme-purple Button:hover { -fx-background-color: #6d28d9; }
+.preview-surface.theme-crimson Button { -fx-background-color: #dc2626; }
+.preview-surface.theme-crimson Button:hover { -fx-background-color: #b91c1c; }
