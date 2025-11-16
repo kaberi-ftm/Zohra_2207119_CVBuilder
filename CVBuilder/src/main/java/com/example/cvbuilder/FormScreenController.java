@@ -79,18 +79,26 @@ public class FormScreenController {
             return;
         }
 
+        // Clear previous error styles
+        clearError(fullNameField);
+        clearError(emailAddressField);
+        clearError(phoneField);
+
         if (fullNameField.getText().isBlank()) {
             LOGGER.warning("Validation failed: Full Name is blank");
+            addError(fullNameField);
             new Alert(Alert.AlertType.ERROR, "Please enter your Full Name.").showAndWait();
             return;
         }
         if (!ValidationUtil.isValidEmail(emailAddressField.getText())) {
             LOGGER.warning("Validation failed: Invalid email address: " + emailAddressField.getText());
+            addError(emailAddressField);
             new Alert(Alert.AlertType.ERROR, "Please enter a valid Email Address.").showAndWait();
             return;
         }
         if (!ValidationUtil.isValidPhone(phoneField.getText())) {
             LOGGER.warning("Validation failed: Invalid phone: " + phoneField.getText());
+            addError(phoneField);
             new Alert(Alert.AlertType.ERROR, "Please enter a valid Phone Number.").showAndWait();
             return;
         }
@@ -206,5 +214,14 @@ public class FormScreenController {
             designPreviewClassic.setVisible(classic);
             designPreviewClassic.setManaged(classic);
         }
+    }
+
+    private void addError(javafx.scene.control.Control c) {
+        if (c == null) return;
+        if (!c.getStyleClass().contains("field-error")) c.getStyleClass().add("field-error");
+    }
+    private void clearError(javafx.scene.control.Control c) {
+        if (c == null) return;
+        c.getStyleClass().remove("field-error");
     }
 }

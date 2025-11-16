@@ -44,6 +44,12 @@ Label { -fx-wrap-text: true; }
 }
 .text-area .content { -fx-background-color: #ffffff; }
 
+/* Validation error highlight */
+.field-error {
+    -fx-border-color: #dc2626;
+    -fx-border-width: 1.5;
+}
+
 /* Cards */
 .card {
     -fx-background-color: #ffffff;

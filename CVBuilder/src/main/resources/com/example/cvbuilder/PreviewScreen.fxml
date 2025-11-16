@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 
-<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.cvbuilder.PreviewScreenController" styleClass="preview-surface">
 
     <top>
@@ -30,8 +30,8 @@
                                     <VBox fx:id="sidebarBox" spacing="12" prefWidth="220.0" maxWidth="240.0" styleClass="accent-bg sidebar">
                                         <padding><Insets top="16" left="16" right="16" bottom="16"/></padding>
                                         <ImageView fx:id="photoView" fitWidth="180" preserveRatio="true" />
-                                        <Label text="Contact" styleClass="section-heading"/>
-                                        <Label fx:id="contactLabel" wrapText="true"/>
+                                <Label text="Contact" styleClass="section-heading"/>
+                                <Label fx:id="contactSidebarLabel" wrapText="true"/>
                                         <Separator styleClass="accent-separator"/>
                                         <Label text="Skills" styleClass="section-heading"/>
                                         <Label fx:id="skillsContent" wrapText="true"/>

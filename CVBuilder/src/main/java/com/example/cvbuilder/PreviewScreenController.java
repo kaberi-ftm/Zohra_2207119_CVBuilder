@@ -28,6 +28,7 @@ public class PreviewScreenController {
     @FXML private BorderPane root;
     @FXML private Label nameLabel;
     @FXML private Label contactLabel;
+    @FXML private Label contactSidebarLabel;
     @FXML private Label educationContent;
     @FXML private Label skillsContent;
     @FXML private Label experienceContent;
@@ -65,6 +66,7 @@ public class PreviewScreenController {
         String contact = String.format("%s | %s | %s",
                 nullToEmpty(cv.getEmail()), nullToEmpty(cv.getPhone()), nullToEmpty(cv.getAddress()));
         contactLabel.setText(contact);
+        if (contactSidebarLabel != null) contactSidebarLabel.setText(contact);
         contactContentRight.setText(contact);
         educationContent.setText(emptyToPlaceholder(cv.getEducation()));
         String skills = emptyToPlaceholder(cv.getSkills());
