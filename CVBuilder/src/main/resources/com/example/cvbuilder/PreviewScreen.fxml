@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.cvbuilder.PreviewScreenController" styleClass="preview-surface">
+
+    <top>
+        <VBox spacing="6" alignment="CENTER" BorderPane.alignment="CENTER">
+            <padding><Insets top="20" left="30" right="30" bottom="10"/></padding>
+            <Label fx:id="nameLabel" styleClass="cv-name" text="Full Name"/>
+            <Label fx:id="contactLabel" styleClass="cv-contact" text="email | phone | address"/>
+            <Separator styleClass="accent-separator"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" pannable="true">
+            <content>
+                <StackPane alignment="TOP_CENTER">
+                    <children>
+                        <VBox fx:id="pageRoot" styleClass="page" prefWidth="794.0" spacing="0">
+                            <children>
+                                <HBox spacing="18" fillHeight="true" maxWidth="794.0">
+                                    <padding><Insets top="16" left="24" right="24" bottom="24"/></padding>
+
+                                    <VBox fx:id="sidebarBox" spacing="12" prefWidth="220.0" maxWidth="240.0" styleClass="accent-bg sidebar">
+                                        <padding><Insets top="16" left="16" right="16" bottom="16"/></padding>
+                                        <ImageView fx:id="photoView" fitWidth="180" preserveRatio="true" />
+                                        <Label text="Contact" styleClass="section-heading"/>
+                                        <Label fx:id="contactLabel" wrapText="true"/>
+                                        <Separator styleClass="accent-separator"/>
+                                        <Label text="Skills" styleClass="section-heading"/>
+                                        <Label fx:id="skillsContent" wrapText="true"/>
+                                    </VBox>
+
+                                    <VBox fx:id="mainColumn" spacing="16" fillWidth="true">
+                                        <Label text="Contact" styleClass="section-heading" fx:id="contactHeadingRight" visible="false" managed="false"/>
+                                        <Label fx:id="contactContentRight" wrapText="true" visible="false" managed="false"/>
+                                        <Separator styleClass="accent-separator" visible="false" managed="false"/>
+
+                                        <Label text="Skills" styleClass="section-heading" fx:id="skillsHeadingRight" visible="false" managed="false"/>
+                                        <Label fx:id="skillsContentRight" wrapText="true" visible="false" managed="false"/>
+                                        <Separator styleClass="accent-separator" visible="false" managed="false"/>
+
+                                        <Label text="Education" styleClass="section-heading"/>
+                                        <Label fx:id="educationContent" wrapText="true"/>
+                                        <Separator styleClass="accent-separator"/>
+
+                                        <Label text="Work Experience" styleClass="section-heading"/>
+                                        <Label fx:id="experienceContent" wrapText="true"/>
+                                        <Separator styleClass="accent-separator"/>
+
+                                        <Label text="Projects" styleClass="section-heading"/>
+                                        <Label fx:id="projectsContent" wrapText="true"/>
+                                    </VBox>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding><Insets top="12" left="30" right="30" bottom="20"/></padding>
+            <Button text="Back to Edit" onAction="#handleBackToEdit"/>
+            <Button text="Home" onAction="#handleBackHome"/>
+            <Button text="Export to PDF" onAction="#handleExportPdf"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
