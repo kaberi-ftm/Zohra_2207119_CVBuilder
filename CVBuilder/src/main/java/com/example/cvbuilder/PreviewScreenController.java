@@ -58,8 +58,14 @@ public class PreviewScreenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/cvbuilder/FormScreen.fxml"));
             Parent root = loader.load();
 
+            Scene formScene = new Scene(root);
+
+            formScene.getStylesheets().add(
+                    getClass().getResource("/com/example/cvbuilder/Styles.css").toExternalForm()
+            );
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
+            stage.setScene(formScene);
             stage.setTitle("Create CV");
             stage.show();
 
