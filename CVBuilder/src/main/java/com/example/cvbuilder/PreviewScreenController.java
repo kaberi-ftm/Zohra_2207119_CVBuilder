@@ -28,13 +28,21 @@ public class PreviewScreenController {
     @FXML private Label projectsLabel;
     @FXML private ImageView profilePhotoView;
 
+    @FXML private Label emailHeaderLabel;
+    @FXML private Label phoneHeaderLabel;
+
     public void setData(Cv cv) {
         if (cv == null) return;
 
         nameLabel.setText(cv.getFullName());
+
         emailLabel.setText(cv.getEmail());
         phoneLabel.setText(cv.getPhone());
         addressLabel.setText(cv.getAddress());
+
+        emailHeaderLabel.setText(cv.getEmail());
+        phoneHeaderLabel.setText(cv.getPhone());
+
         educationLabel.setText(cv.getEducation());
         skillsLabel.setText(cv.getSkills());
         experienceLabel.setText(cv.getExperience());

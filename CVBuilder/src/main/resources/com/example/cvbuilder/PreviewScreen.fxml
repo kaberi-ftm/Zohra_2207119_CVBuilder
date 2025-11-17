@@ -18,6 +18,11 @@
                 <Insets bottom="10" left="30" right="30" top="20" />
             </padding>
             <Label fx:id="nameLabel" styleClass="preview-name"/>
+            <HBox alignment="CENTER" spacing="10">
+                <Label fx:id="emailHeaderLabel" styleClass="preview-contact" />
+                <Label styleClass="preview-contact" text="|" />
+                <Label fx:id="phoneHeaderLabel" styleClass="preview-contact" />
+            </HBox>
             <Separator />
         </VBox>
     </top>
