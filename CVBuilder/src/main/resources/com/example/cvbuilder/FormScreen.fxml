@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.cvbuilder.FormScreenController">
 
     <top>
-        <Label text="Enter Your Details" styleClass="heading-label" alignment="CENTER" maxWidth="Infinity" BorderPane.alignment="CENTER">
+        <Label text="Enter Your Details" styleClass="heading-label" alignment="CENTER">
             <BorderPane.margin>
                 <Insets top="20" bottom="20"/>
             </BorderPane.margin>
@@ -20,85 +27,70 @@
     </top>
 
     <center>
-        <ScrollPane fx:id="scrollRoot" fitToWidth="true" pannable="true">
-            <content>
-                <StackPane alignment="TOP_CENTER">
-                    <children>
-                        <VBox spacing="16" maxWidth="Infinity" prefWidth="Infinity" styleClass="mobile-card" alignment="CENTER">
-                            <GridPane fx:id="topGrid" hgap="16" vgap="0" alignment="TOP_LEFT">
-                                <columnConstraints>
-                                    <ColumnConstraints percentWidth="60"/>
-                                    <ColumnConstraints percentWidth="40"/>
-                                </columnConstraints>
-                                <rowConstraints>
-                                    <RowConstraints vgrow="ALWAYS" valignment="TOP"/>
-                                </rowConstraints>
-                                <children>
-                                    <VBox styleClass="card" spacing="12" GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="TOP_LEFT" GridPane.hgrow="ALWAYS" maxWidth="Infinity">
-                                        <Label text="Personal Information" styleClass="section-heading"/>
-                                        <GridPane vgap="12" hgap="12" alignment="TOP_LEFT" maxWidth="Infinity">
-                                            <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                                            <TextField fx:id="fullNameField" promptText="e.g., John Doe" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" maxWidth="Infinity"/>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="15">
+                <padding>
+                    <Insets left="50" right="50" top="10" bottom="20"/>
+                </padding>
 
-                                            <Label text="Email Address:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                                            <TextField fx:id="emailAddressField" promptText="e.g., john@email.com" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <GridPane hgap="20">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="60.0"/>
+                        <ColumnConstraints percentWidth="40.0"/>
+                    </columnConstraints>
 
-                                            <Label text="Phone Number:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                                            <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <VBox spacing="15" GridPane.columnIndex="0">
+                        <Label text="Personal Information" styleClass="section-heading"/>
+                        <GridPane vgap="10" hgap="10">
+                            <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="Name" promptText="e.g., Fatema Tuj Zohra" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-                                            <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-                                            <TextField fx:id="addressField" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" maxWidth="Infinity"/>
+                            <Label text="Email Address:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="mail" promptText="e.g., zohra2207119@email.com" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-                                            <columnConstraints>
-                                                <ColumnConstraints minWidth="140.0" halignment="LEFT"/>
-                                                <ColumnConstraints hgrow="ALWAYS"/>
-                                            </columnConstraints>
-                                        </GridPane>
-                                    </VBox>
+                            <Label text="Phone Number:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="phone" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-                                    <VBox styleClass="card" spacing="12" GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="TOP_LEFT" GridPane.hgrow="ALWAYS" maxWidth="Infinity">
-                                        <Label fx:id="photoTitleLabel" text="Photo" styleClass="section-heading"/>
-                                        <StackPane fx:id="photoBox" styleClass="photo-box" maxWidth="Infinity" prefWidth="240.0" prefHeight="240.0" minWidth="200.0" minHeight="200.0" alignment="CENTER">
-                                            <ImageView fx:id="photoPreview" preserveRatio="true" />
-                                            <Button fx:id="uploadPhotoButton" text="Upload Photo" onAction="#handleUploadPhoto" />
-                                        </StackPane>
-                                    </VBox>
-                                </children>
-                            </GridPane>
+                            <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="address" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30.0"/>
+                                <ColumnConstraints percentWidth="70.0"/>
+                            </columnConstraints>
+                        </GridPane>
+                    </VBox>
 
+                    <VBox spacing="10" GridPane.columnIndex="1">
+                        <Label text="Photo" styleClass="section-heading"/>
+                        <StackPane fx:id="photo" styleClass="photo-box" maxWidth="200.0" prefHeight="200.0" minWidth="200.0" minHeight="200.0" alignment="CENTER">
+                            <ImageView fx:id="photoPreview" preserveRatio="true" fitWidth="200.0" fitHeight="200.0"/>
+                            <Button fx:id="uploadPhotoButton" text="Upload Photo" onAction="#handleUploadPhoto"/>
+                        </StackPane>
+                    </VBox>
+                </GridPane>
 
-                            <VBox spacing="12">
-                                <VBox styleClass="card" spacing="8">
-                                    <Label text="Educational Qualifications" styleClass="section-heading"/>
-                                    <TextArea fx:id="educationField" promptText="e.g., B.Sc in CSE..." prefRowCount="3" maxWidth="Infinity"/>
-                                </VBox>
-                                <VBox styleClass="card" spacing="8">
-                                    <Label text="Skills" styleClass="section-heading"/>
-                                    <TextArea fx:id="skillsField" promptText="e.g., Java, Python..." prefRowCount="3" maxWidth="Infinity"/>
-                                </VBox>
-                                <VBox styleClass="card" spacing="8">
-                                    <Label text="Work Experience" styleClass="section-heading"/>
-                                    <TextArea fx:id="experienceField" prefRowCount="4" maxWidth="Infinity"/>
-                                </VBox>
-                                <VBox styleClass="card" spacing="8">
-                                    <Label text="Projects" styleClass="section-heading"/>
-                                    <TextArea fx:id="projectsField" prefRowCount="4" maxWidth="Infinity"/>
-                                </VBox>
-                            </VBox>
-                        </VBox>
-                    </children>
-                </StackPane>
-            </content>
+                <Label text="Educational Qualifications" styleClass="section-heading"/>
+                <TextArea fx:id="education" promptText="e.g., B.Sc.Engineering in Computer Science..." prefRowCount="3"/>
+
+                <Label text="Skills" styleClass="section-heading"/>
+                <TextArea fx:id="skills" promptText="e.g., Java, Mycrosoft Office..." prefRowCount="3"/>
+
+                <Label text="Work Experience" styleClass="section-heading"/>
+                <TextArea fx:id="experience" prefRowCount="4"/>
+
+                <Label text="Projects" styleClass="section-heading"/>
+                <TextArea fx:id="projects" prefRowCount="4"/>
+            </VBox>
         </ScrollPane>
     </center>
 
     <bottom>
         <HBox alignment="CENTER_RIGHT" spacing="10">
             <padding>
-                <Insets top="16" right="30" bottom="16" left="30"/>
+                <Insets top="20" right="50" bottom="20" left="50"/>
             </padding>
-            <Button text="Generate CV" onAction="#handleGenerateCV" defaultButton="true" />
+            <Button text="Generate CV" onAction="#handleGenerateCV" defaultButton="true"/>
         </HBox>
     </bottom>
 </BorderPane>
